@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="todolist.js"></script>
+    <style>
+        body{
+            margin: 0%;
+            font-family: Comic sans MS;
+        }
+        .header{
+            background-color: aquamarine;
+            height:100px;
+            width:auto;
+            text-align: center;
+            padding-top: 1%;
+        }
+        .container{
+            width:45%;
+            border: 1pt dotted blue;
+            padding:10px;
+            margin: auto;
+            background-color: rgb(205, 220, 224);
+        }
+        .row{
+            display: flex;
+        }
+        #sub{
+            padding-left: 30px;
+        }
+        #submit{
+            height:26px;
+        }
+        ul li{
+            display: block;
+            font-size: 15pt;
+            color:rgb(194, 21, 21);
+            overflow: auto;
+        }
+        .ulists{
+            float: right;
+            width:55px;
+            height:30px;
+        }
+        .textdiv,.buttondiv{
+            display: inline;
+        }
+        #taskbutton{
+            float:right;
+        }
+        #button{
+            height:30px;
+        }
+        @media screen and (max-width:400px) {
+            input[type=text]{
+                max-width: 80%;
+            }
+            .textdiv,.buttondiv{
+                display: block;
+            }
+            ul li{
+                font-size: 13pt;
+            }
+            .container{
+                overflow: hidden;
+            }
+        }
+        @media screen and (max-width:600px){
+            .container{
+                width:auto;
+            }
+            .row{
+                flex-direction: column;
+            }
+            #sub{
+                padding: 5px 2px;
+            }
+        }
+        @media screen and (min-width:601px)and (max-width:900px) {
+            .container{
+                width:60%;
+            }
+        }
+    </style>
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="header">
+        <font face="Comic sans MS" size="11" color="black">Todo List</font>
+    </div>
+    <div class="container">
+        <div id="taskbutton">
+            <button id="button" onclick="displayitems()">Task List</button>
+        </div>
+        <h2>Add Items</h2>
+        <label style="display: none; color: rgb(9, 97, 24);" id="label"> 
+             Text edited successfully
+        </label>
+        <form class="form">
+            <div class="row">
+                <div>
+                    <input type="text" id="item" size="45" onkeyup="search()">
+                </div>
+                <div id="sub">
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </div>
+        </form>
+        <h2>Tasks</h2>
+        <form>
+            <ul id="lists">
+                
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
